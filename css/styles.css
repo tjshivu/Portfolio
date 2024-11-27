@@ -76,13 +76,13 @@ footer a:hover {
    box-shadow: 0 0 20px #eee;
    border-radius: 10px;
    display: block;
-  text-decoration: none;
+  
  }
 
  .btn:hover {
    background-position: right center; /* change the direction of the change here */
    color: #fff;
-   text-decoration: none;
+  text-decoration: none;
  }
 
     
@@ -149,11 +149,12 @@ footer a:hover {
     border-bottom: 2px dashed #d3d4d6;
 }
 .download-link {
+   text-decoration: none;
     position: fixed;
     top: 5px;
     left: 5px;
     font-size: 1.5rem;
-   text-decoration: none;
+   
 }
 @media screen and (max-width: 1200px){
     .download-link {
