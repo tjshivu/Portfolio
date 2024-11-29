@@ -13,9 +13,11 @@ Off-white     #f6f6f6
 /* 
   https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 */
+/* GLOBAL STYLES 
+------------------------------------*/
 html {   
     box-sizing: border-box;
-    font-size: 62.5%; /* set default to 10px */
+    font-size: 1.4vh; /* set default to 10px */
 }
 *, *:before, *:after {
     box-sizing: inherit;
@@ -27,24 +29,27 @@ html, body {
 body {
     background: #f6f6f6; 
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif; /* Clean, professional font */
     font-size: 1.5rem;
     line-height: 1.4;
 }
 h1, h2, h3 {
-    font-family: 'Caveat', cursive;
-    font-weight: 400;
+    font-family: 'Roboto', Arial, sans-serif; /* Use Roboto for headings */
+    font-weight: 500;
     margin: 0;
 }
 h1 {
     font-size: 7rem;
     line-height: 0.85;
+    font-weight: 700; /* Bold for better emphasis */
 }
 h2 {
     font-size: 3.6rem;
+    font-weight: 500; /* Medium weight for a clean look */
 }
 h3 {
     font-size: 2.4rem;
+    font-weight: 400; /* Regular weight for subtle emphasis */
 }
 
 /* links */
@@ -64,26 +69,37 @@ footer a:hover {
 
    
    
-.btn {background-image: linear-gradient(to right, #3494E6 0%, #EC6EAD  51%, #3494E6  100%)}
 .btn {
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: white;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
-   display: block;
- }
+    background-image: linear-gradient(to right, #4A90E2 0%, #50A684 51%, #4A90E2 100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Softer shadow */
+    border-radius: 10px;
+    display: inline-block;
+    border: none; /* Removes default browser styles */
+    font-family: Arial, Helvetica, sans-serif; /* Ensures clean typography */
+    font-size: 1rem; /* Default button font size */
+}
 
- .btn:hover {
-   background-position: right center; /* change the direction of the change here */
-   color: #fff;
-   text-decoration: none;
- }
+.btn:hover {
+    background-position: right center;
+    color: #f9f9f9; /* Slightly lighter color on hover */
+    text-decoration: none;
+}
 
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 500px) {
+    .btn {
+        padding: 10px 30px; /* Reduce padding */
+        font-size: 0.85rem; /* Decrease font size */
+        border-radius: 8px; /* Slightly smaller border radius */
+    }
+}
     
   
 
@@ -133,7 +149,7 @@ footer a:hover {
 /* RESUME
 ------------------------------------*/
 .resume header::before {
-    background: url(../images/bg-resume.jpeg) ;
+    background: url(../images/bg-resu.jpg) ;
     border-bottom-left-radius: 50px; /* Radius for the bottom-left corner */
   border-bottom-right-radius: 50px;
     background-size: cover;
@@ -148,11 +164,31 @@ footer a:hover {
     border-bottom: 2px dashed #d3d4d6;
 }
 .download-link {
-    position: fixed;
-    top: 5px;
-    left: 5px;
-    font-size: 1.5rem;
-    text-decoration: none;
+    position: fixed; /* Keep it fixed on the screen */
+    top: 10px; /* Adjust positioning from the top */
+    right: 10px; /* Move it to the right corner */
+    font-size: 1.5rem; /* Keep it readable */
+    background: #3c8453; /* Add a button-like background */
+    color: #ffffff; /* Ensure the text is visible */
+    padding: 10px 20px; /* Add spacing for better clickability */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for emphasis */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+    background: #2a6b3e; /* Darker shade on hover */
+    text-decoration: none; /* Maintain no underline */
+}
+
+/* Adjustments for mobile */
+@media screen and (max-width: 500px) {
+    .download-link {
+        font-size: 1.2rem; /* Slightly smaller text on small screens */
+        padding: 8px 15px; /* Adjust padding for mobile */
+    }
 }
 @media screen and (max-width: 1200px){
     .download-link {
@@ -244,35 +280,56 @@ footer a:hover {
 footer {
     background: #222;
     color: #d3d4d6;
-     height: 100px;
+    min-height: 100px; /* Ensure footer grows to fit content */
+    display: flex;
+    flex-direction: column; /* Stack items by default */
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    padding: 10px 20px;
+    box-sizing: border-box; /* Include padding in size calculations */
 }
+
 .socials {
     list-style-type: none;
     padding: 0;
+    display: flex; /* Flexbox layout for the icons */
+    gap: 10px; /* Space between icons */
+    margin: 10px 0; /* Avoid content overlapping */
+    flex-wrap: wrap; /* Ensure icons wrap to the next line if needed */
+    justify-content: center; /* Center icons in the footer */
 }
+
 .socials li {
-    padding: 20px;
     display: inline-block;
-    margin-left: 10px;
 }
+
 .socials img {
     width: 32px;
+    transition: opacity 0.3s ease; /* Smooth hover effect */
 }
+
 .socials img:hover {
     opacity: 0.5;
 }
 
-@media screen and (min-width: 860px){
+/* For larger screens */
+@media screen and (min-width: 860px) {
     footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 0 20px;
+        flex-direction: row; /* Switch to horizontal layout */
+        justify-content: space-between; /* Space items between */
+    }
+    .socials {
+        justify-content: flex-start; /* Align socials to the left or wherever fits your design */
     }
 }
-@media screen and (max-width: 859px){
-    footer {
-        text-align: center;
-        padding: 10px;
-    }
 
+/* For smaller screens */
+@media screen and (max-width: 859px) {
+    footer {
+        flex-direction: column; /* Stack items */
+        text-align: center;
+    }
+    .socials {
+        justify-content: center; /* Center icons on smaller screens */
+    }
 }
