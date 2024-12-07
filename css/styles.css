@@ -19,6 +19,13 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; 
 }
+
+@media screen and (max-width: 500px) {
+    html {
+        font-size: 50%; /* Reduces the base font size to 8px */
+    }
+}
+
 *, *:before, *:after {
     box-sizing: inherit;
 }
