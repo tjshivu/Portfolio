@@ -22,7 +22,7 @@ html {
 
 @media screen and (max-width: 500px) {
     html {
-        font-size: 50%; /* Reduces the base font size to 8px */
+        font-size: 60%; /* Reduces the base font size to 10px */
     }
 }
 
