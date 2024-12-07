@@ -15,9 +15,9 @@ Off-white     #f6f6f6
 */
 /* GLOBAL STYLES 
 ------------------------------------*/
-html {   
+html {
     box-sizing: border-box;
-    font-size: 1.4vh; /* set default to 10px */
+    font-size: 62.5%; 
 }
 *, *:before, *:after {
     box-sizing: inherit;
